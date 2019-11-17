@@ -1,10 +1,15 @@
 const express = require("express");
 const path = require("path");
 const app = express();
-const sslRedirect = require("heroku-ssl-redirect");
 
 app.use(express.static(path.join(__dirname, "..", "build")));
-app.use(sslRedirect());
+
+if(process.env.NODE_ENV === 'production') {
+  app.use((req, res, next) => {
+    if (req.header('x-forwarded-proto') !== 'https') res.redirect(`https://${req.header('host')}${req.url}`);
+    else next();
+  });
+};
 
 const PORT = process.env.PORT || 4000;
 
