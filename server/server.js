@@ -11,5 +11,8 @@ app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}!`);
 });
 
+app.get("*", function(request, response){
+  response.redirect("https://" + request.headers.host + request.url);
+});
 
 
