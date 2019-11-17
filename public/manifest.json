@@ -1,8 +1,8 @@
 {
   "name": "Mini-Converter",
-  "short_name": "Mini-Con",
+  "short_name": "Mini Converter",
   "theme_color": "#9d21f3",
-  "background_color": "rgba(33,86,243,0.7)",
+  "background_color": "#c996e0",
   "display": "standalone",
   "Scope": "/",
   "start_url": "/",
