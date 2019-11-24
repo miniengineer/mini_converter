@@ -1,3 +1,5 @@
+
+
 const files = [
   './',
   './index.html',
@@ -9,7 +11,8 @@ const files = [
 
 self.addEventListener('install', async e => {
   const cache = await caches.open('files');
-  cache.addAll(files);
+  await cache.addAll(files);
+  console.log("Caching complete. You app can now work offline!")
 });
 
 
