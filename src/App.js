@@ -37,7 +37,7 @@ class App extends React.Component {
   handleConvert = (e) => {
     e.preventDefault();
     const cashify = new Cashify({base: 'USD', rates: this.state.rates});
-    const result = cashify.convert(this.state.amount, {from: this.state.from, to: this.state.to});
+    const result = cashify.convert(this.state.amount, {from: this.state.from, to: this.state.to}).toFixed(2) + ` ${this.state.to}`;
     this.setState({ result });
   }
 
