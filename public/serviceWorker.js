@@ -1,18 +1,10 @@
-//If the service worker API is supported in the browser,
-//register it against the site using the ServiceWorkerContainer.register() method
-if('serviceWorker' in navigator) {
-  navigator.serviceWorker
-    .register('./serviceWorker.js')
-    .then(() => console.log("Service Worker Registered"));
-}
-
 const files = [
   './',
-  './index.html',
-  '../src/App.js',
-  '../src/App.css',
-  '../src/index.css',
-  '../src/index.js'
+  '/index.html',
+  '/src/App.js',
+  '/src/App.css',
+  '/src/index.css',
+  '/src/index.js'
 ];
 
 self.addEventListener('install', event => {
@@ -35,3 +27,5 @@ self.addEventListener('fetch', event => {
     })
   );
 });
+
+
