@@ -1,10 +1,10 @@
 const files = [
-  './',
-  '/index.html',
-  '/src/App.js',
-  '/src/App.css',
-  '/src/index.css',
-  '/src/index.js'
+  '/mini_converter/',
+  '/mini_converter/index.html',
+  '/mini_converter/src/App.js',
+  '/mini_converter/src/App.css',
+  '/mini_converter/src/index.css',
+  '/mini_converter/src/index.js'
 ];
 
 self.addEventListener('install', event => {
