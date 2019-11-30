@@ -1,5 +1,3 @@
-
-
 const files = [
   './',
   './index.html',
@@ -9,18 +7,22 @@ const files = [
   '../src/index.js'
 ];
 
-self.addEventListener('install', async e => {
-  const cache = await caches.open('files');
-  await cache.addAll(files);
-  console.log("Caching complete. You app can now work offline!")
+self.addEventListener('install', event => {
+  //Performing tasks for installation step
+  event.waitUntil(
+    caches.open('files').then((cache) => {
+      console.log('Opened cash');
+      return cache.addAll(files);
+    })
+  );
 });
 
 
-self.addEventListener('fetch', function(event) {
+self.addEventListener('fetch', event => {
   console.log(event.request.url);
 
   event.respondWith(
-    caches.match(event.request).then(function(response) {
+    caches.match(event.request).then(response => {
       return response || fetch(event.request);
     })
   );
