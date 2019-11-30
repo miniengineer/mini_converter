@@ -3,6 +3,11 @@ import axios from 'axios';
 import './App.css';
 import { Cashify }from 'cashify';
 
+//material-ui component
+import { Button } from '@material-ui/core';
+
+
+
 class App extends React.Component {
   constructor() {
     super();
@@ -46,8 +51,10 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <form>
+        <header>
+          Mini Currency Converter
+        </header>
+          <form className="container">
             <label>Amount</label>
             <br />
             <input type="text" value={this.state.amount} onChange={this.handleAmountInput}></input>
@@ -130,10 +137,10 @@ class App extends React.Component {
               <option value="TRY">🇹🇷 Turkish lira</option>
             </select>
             <br />
-            <button onClick={this.handleConvert}>Convert</button>
+            <Button onClick={this.handleConvert} variant="contained" color="primary">Convert</Button>
+            {/* <button onClick={this.handleConvert}>Convert</button> */}
           </form>
           <h1>{this.state.result}</h1>
-        </header>
       </div>
     );
   }
