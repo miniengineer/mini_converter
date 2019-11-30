@@ -8,6 +8,7 @@
   "author": "MiniEngineer",
   "license": "MIT",
   "dependencies": {
+    "@material-ui/core": "^4.7.0",
     "axios": "^0.19.0",
     "cashify": "^2.0.2",
     "heroku-ssl-redirect": "^0.0.4",
